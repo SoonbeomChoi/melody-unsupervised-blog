@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/melody-unsupervised-blog/static/css/main.5cfc7899.chunk.css",
-    "main.js": "/melody-unsupervised-blog/static/js/main.56be5f66.chunk.js",
-    "main.js.map": "/melody-unsupervised-blog/static/js/main.56be5f66.chunk.js.map",
+    "main.js": "/melody-unsupervised-blog/static/js/main.8f2df043.chunk.js",
+    "main.js.map": "/melody-unsupervised-blog/static/js/main.8f2df043.chunk.js.map",
     "runtime-main.js": "/melody-unsupervised-blog/static/js/runtime-main.8d042d49.js",
     "runtime-main.js.map": "/melody-unsupervised-blog/static/js/runtime-main.8d042d49.js.map",
     "static/js/2.138e5db9.chunk.js": "/melody-unsupervised-blog/static/js/2.138e5db9.chunk.js",
@@ -146,6 +146,6 @@
     "static/js/runtime-main.8d042d49.js",
     "static/js/2.138e5db9.chunk.js",
     "static/css/main.5cfc7899.chunk.css",
-    "static/js/main.56be5f66.chunk.js"
+    "static/js/main.8f2df043.chunk.js"
   ]
 }
