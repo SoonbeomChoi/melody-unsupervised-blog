@@ -10,7 +10,7 @@ import { toPercent } from "../utility/Utility";
 
 const Track = forwardRef((props, canvasRef) => {
   const { classes, theme, trackType, trackNumber, trackName } = props;
-  const thumbWidth = 'calc(100% - ' + (parseInt(globalSize.nameWidth) + parseInt(globalSize.buttonWidth) + 6*parseFloat(globalSize.marginSmall)) + 'px)';
+
   const [playPos, setPlayPos] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -41,17 +41,25 @@ const Track = forwardRef((props, canvasRef) => {
   return (
     <div style={{ display: 'flex', width: '100%', height: globalSize.trackHeight, margin: globalSize.marginSmall + ' ' + globalSize.marginMedium }}>
       <div style={{ 
-          display: 'inline-flex',
-          justifyItems: 'center',
-          alignItems: 'center',
-          backgroundColor: theme.backgroundColorLevel1,
-          width: globalSize.nameWidth,
-          height: '100%',
-          margin: globalSize.marginSmall
+        display: 'inline-flex',
+        justifyItems: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.backgroundColorLevel1,
+        width: globalSize.nameWidth1,
+        height: '100%',
+        margin: globalSize.marginSmall,
+        [theme.breakpoints.down('sm')]: {
+          width: globalSize.nameWidth2
+        }
       }}>
         <p 
           className={classes.p}
-          style={{ fontSize: globalSize.fontSizeMedium, textAlign: 'center' }}
+          style={{ 
+            fontSize: globalSize.fontSizeMedium1, textAlign: 'center',
+            [theme.breakpoints.down('sm')]: {
+              fontSize: globalSize.fontSizeMedium2
+            }
+          }}
         >
           {trackName}
         </p>
@@ -78,13 +86,7 @@ const Track = forwardRef((props, canvasRef) => {
           <PlayArrowIcon fontSize='large'/>
         </Button>
       </div>
-      <div style={{ 
-        display: 'inline-block',
-        backgroundColor: theme.backgroundColorLevel1,
-        width: thumbWidth,
-        height: '100%',
-        margin: globalSize.marginSmall
-      }}>
+      <div className={classes.divThumb}>
         <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }}/>
         <div style={{ 
           backgroundColor: 'inherit',

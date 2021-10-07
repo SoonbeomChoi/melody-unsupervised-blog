@@ -194,11 +194,11 @@ export const krStar = [
   CNNKRStar, GNDKRStar
 ];
 
-export const ttsAlph = [TTSENAlph2U, TTSENAlph0U, TTSENAlph2D];
-export const ttsHead = [TTSENHead2U, TTSENHead0U, TTSENHead2D];
-export const ttsJing = [TTSENJing2U, TTSENJing0U, TTSENJing2D];
-export const ttsRudl = [TTSENRudl2U, TTSENRudl0U, TTSENRudl2D];
-export const ttsStar = [TTSENStar2U, TTSENStar0U, TTSENStar2D];
+export const ttsAlph = [TTSENAlph0U, TTSENAlph2U, TTSENAlph2D];
+export const ttsHead = [TTSENHead0U, TTSENHead2U, TTSENHead2D];
+export const ttsJing = [TTSENJing0U, TTSENJing2U, TTSENJing2D];
+export const ttsRudl = [TTSENRudl0U, TTSENRudl2U, TTSENRudl2D];
+export const ttsStar = [TTSENStar0U, TTSENStar2U, TTSENStar2D];
 
 export const enList = [enAlph, enHead, enJing, enRudl, enStar];
 export const krList = [krAlph, krHead, krJing, krRudl, krStar];

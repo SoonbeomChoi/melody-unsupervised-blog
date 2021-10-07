@@ -5,7 +5,6 @@ import { Button } from "@mui/material";
 import { ToggleButtonGroup } from "@mui/material";
 import { ToggleButton } from "@mui/material";
 
-import { globalSize } from "../property/SizeProperty";
 import { useStyles } from "../control/ThemeControl";
 import MACLabLogo from "../resource/MACLabLogo.png";
 
@@ -16,6 +15,12 @@ class Header extends React.PureComponent {
     this.state = {
       selectedSection: "Overview"
     }
+
+    this.openMACLab = this.openMACLab.bind(this);
+  }
+
+  openMACLab() {
+    window.open('https://mac.kaist.ac.kr/', '_blank');
   }
 
   render() {
@@ -24,8 +29,8 @@ class Header extends React.PureComponent {
     return (
       <div className={classes.header}>
         <ButtonGroup>
-          <Button className={classes.button} variant="contained" style={{ padding: '0px' }}>
-            <img src={MACLabLogo} alt="" style={{ width: globalSize.logoWidth }}/>
+          <Button className={classes.button} variant="contained" onClick={this.openMACLab} style={{ padding: '0px' }}>
+            <img className={classes.logo} src={MACLabLogo} alt=""/>
           </Button>
         </ButtonGroup>
         <ToggleButtonGroup onChange={onSelectSection} exclusive>

@@ -21,6 +21,7 @@ const Overview = (props) => {
       <div className={classes.divImg}>
         <img src={ModelImage} alt="" style={{ width: 'calc(100% - ' + 2*parseInt(globalSize.marginMedium) + 'px)', margin: globalSize.marginMedium }}/>
       </div>
+      <div className={classes.divBottom}/>
     </div>
   )
 }

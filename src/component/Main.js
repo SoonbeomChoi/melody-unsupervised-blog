@@ -18,7 +18,7 @@ const Main = forwardRef((props, mainRef) => {
     'ATK', 'Original'
   ];
   const ttsTrackList = [
-    'Pitch +2', 'Pitch +0', 'Pitch -2'
+    'Pitch +0', 'Pitch +2', 'Pitch -2'
   ];
 
   const svsColorList = [

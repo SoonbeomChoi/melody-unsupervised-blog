@@ -22,6 +22,7 @@ const Results = (props) => {
         <img src={F0RMSEEN} alt="" style={{ width: imgWidth, height: 'auto', margin: globalSize.marginMedium }}/>
         <img src={F0RMSEKR} alt="" style={{ width: imgWidth, height: 'auto', margin: globalSize.marginMedium }}/>
       </div>
+      <div className={classes.divBottom}/>
     </div>
   )
 }

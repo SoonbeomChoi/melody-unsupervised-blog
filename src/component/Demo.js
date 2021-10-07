@@ -3,7 +3,6 @@ import { withStyles } from "@mui/styles";
 import { ToggleButtonGroup } from "@mui/material";
 import { ToggleButton } from "@mui/material";
 
-import { globalSize } from "../property/SizeProperty";
 import { useStyles } from "../control/ThemeControl"
 import { audioControl } from "../control/AudioControl";
 import { loadAudio } from "../utility/IO";
@@ -70,6 +69,7 @@ const Demo = (props) => {
       {props.trackList.map((trackName, i) => (
         <Track key={"track" + i.toString()} ref={c => refList.current[i] = c} trackType={props.trackType} trackNumber={i} trackName={trackName}/>
       ))}
+      <div className={classes.divBottom}/>
     </div>
   )
 }
