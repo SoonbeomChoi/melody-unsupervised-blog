@@ -17,9 +17,9 @@ function App() {
     if (selectedSection === 'Overview') {
       mainRef.current.scrollTo({ top: 0, behavior: "smooth" });
     } else if (selectedSection === 'Demo') {
-      mainRef.current.scrollTo({ top: unitHeight, behavior: "smooth" });
+      mainRef.current.scrollTo({ top: 2*unitHeight, behavior: "smooth" });
     } else if (selectedSection === 'Results') {
-      mainRef.current.scrollTo({ top: 4*unitHeight, behavior: "smooth" });
+      mainRef.current.scrollTo({ top: 5*unitHeight, behavior: "smooth" });
     }
   }
 

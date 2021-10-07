@@ -5,6 +5,7 @@ import { globalSize } from "../property/SizeProperty";
 import { enList, krList, ttsList } from "../property/AudioFiles";
 import { useStyles } from "../control/ThemeControl";
 import Overview from "./Overview";
+import Method from "./Method";
 import Demo from "./Demo";
 import Results from "./Results";
 
@@ -53,11 +54,11 @@ const Main = forwardRef((props, mainRef) => {
       }
       setScrollY(scrollTop);
 
-      if (0 <= scrollRatio && scrollRatio < 1 - globalSize.scrollTolerance) {
+      if (0 <= scrollRatio && scrollRatio < 2 - globalSize.scrollTolerance) {
         setSection("Overview");
-      } else if (1 - globalSize.scrollTolerance <= scrollRatio && scrollRatio < 4 - globalSize.scrollTolerance) {
+      } else if (2 - globalSize.scrollTolerance <= scrollRatio && scrollRatio < 5 - globalSize.scrollTolerance) {
         setSection("Demo");
-      } else if (4 - globalSize.scrollTolerance <= scrollRatio) {
+      } else if (5 - globalSize.scrollTolerance <= scrollRatio) {
         setSection("Results");
       }
     }, [scrollY]
@@ -76,6 +77,7 @@ const Main = forwardRef((props, mainRef) => {
     <div className={classes.mainWrapper}>
       <div className={classes.main} ref={mainRef}>
         <Overview/>
+        <Method/>
         <Demo title={'English'} trackType={'en'} songList={songList} trackList={svsTrackList} audioList={enList} colorList={svsColorList}/>
         <Demo title={'Korean'} trackType={'kr'} songList={songList} trackList={svsTrackList} audioList={krList} colorList={svsColorList}/>
         <Demo title={'Using TTS Data'} trackType={'tts'} songList={songList} trackList={ttsTrackList} audioList={ttsList} colorList={ttsColorList}/>
