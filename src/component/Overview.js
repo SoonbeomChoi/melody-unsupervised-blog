@@ -1,0 +1,28 @@
+import { withStyles } from "@mui/styles";
+
+import { useStyles } from "../control/ThemeControl"
+import { globalSize } from "../property/SizeProperty";
+import ModelImage from "../resource/model.png"
+
+const Overview = (props) => {
+  const { classes } = props;
+
+  return (
+    <div className={classes.section}>
+      <h2 className={classes.h2}> A Melody-Unsupervision Model <br/> for Singing Voice Synthesis </h2>
+      <p className={classes.p}>
+        A melody-unsupervision model for singing voice synthesis
+        is composed of a phoneme classifier and a singing voice generator.
+        In melody-unsupervision mode
+        the two modules are trained jointly using audio and lyrics only.
+        In melody-supervision mode
+        only the singing voice generator is trained using audio, lyrics and melody with time-alignment.
+      </p>
+      <div className={classes.divImg}>
+        <img src={ModelImage} alt="" style={{ width: 'calc(100% - ' + 2*parseInt(globalSize.marginMedium) + 'px)', margin: globalSize.marginMedium }}/>
+      </div>
+    </div>
+  )
+}
+
+export default withStyles(useStyles, { withTheme: true})(Overview);
