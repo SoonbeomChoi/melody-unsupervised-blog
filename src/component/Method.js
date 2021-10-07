@@ -9,7 +9,7 @@ const Method = (props) => {
 
   return (
     <div className={classes.section}>
-      <h2 className={classes.h2}> A Melody-Unsupervision Model <br/> for Singing Voice Synthesis </h2>
+      <h2 className={classes.h2}> Method </h2>
       <p className={classes.p}>
         The proposed model is composed of a phoneme classifier and a singing voice generator.
         In melody-unsupervision mode the modules are trained jointly using audio and lyrics only.
