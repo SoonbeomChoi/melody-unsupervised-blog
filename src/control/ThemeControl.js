@@ -55,7 +55,7 @@ export const useStyles = theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-    scrollSnapAlign: 'center'
+    scrollSnapAlign: 'start'
   },
   headerButton: {
     background: 'transparent !important',
@@ -129,6 +129,7 @@ export const useStyles = theme => ({
   p: {
     color: theme.textColor,
     width: '100%',
+    marginBottom: globalSize.pMarginBottom,
     textAlign: 'justify',
     fontFamily: fontFamily,
     fontSize: globalSize.mainFontSize1,

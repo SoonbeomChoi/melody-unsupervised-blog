@@ -7,13 +7,18 @@ import MCDKR from "../resource/mcd_kr.png"
 import F0RMSEEN from "../resource/f0rmse_en.png"
 import F0RMSEKR from "../resource/f0rmse_kr.png"
 
-const Results = (props) => {
+const Results1 = (props) => {
   const { classes } = props;
   const imgWidth = 'calc(50% - ' + 2*parseInt(globalSize.marginMedium) + 'px';
 
   return (
     <div className={classes.section}>
-      <h2 className={classes.h2}> Results </h2>
+      <h2 className={classes.h2}> Results - MCD and F0 RMSE </h2>
+      <p className={classes.p}>
+        MCD and F0 RMSE results with regards to
+        the increasing number of songs with melody labels for
+        the unsupervised, semisupervised models, and supervised models.
+      </p>
       <div className={classes.divImg}>
         <img src={MCDEN} alt="" style={{ width: imgWidth, height: 'auto', margin: globalSize.marginMedium }}/>
         <img src={MCDKR} alt="" style={{ width: imgWidth, height: 'auto', margin: globalSize.marginMedium }}/>
@@ -27,4 +32,4 @@ const Results = (props) => {
   )
 }
 
-export default withStyles(useStyles, { withTheme: true})(Results);
+export default withStyles(useStyles, { withTheme: true})(Results1);

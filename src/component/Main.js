@@ -1,4 +1,4 @@
-import { forwardRef, useState, useEffect, useCallback } from "react";
+import { forwardRef, useEffect, useCallback } from "react";
 import { withStyles } from "@mui/styles";
 
 import { globalSize } from "../property/SizeProperty";
@@ -7,12 +7,13 @@ import { useStyles } from "../control/ThemeControl";
 import Overview from "./Overview";
 import Method from "./Method";
 import Demo from "./Demo";
-import Results from "./Results";
+import Results1 from "./Results1";
+import Results2 from "./Results2";
 
 const Main = forwardRef((props, mainRef) => {
   const { classes, setSection } = props;
   const unitHeight = window.innerHeight - parseInt(globalSize.headerHeight);
-  const songList = ['Alphabet', 'Head Shoulder Knees & Toes', 'Jingle Bells', 'Rudolph', 'Twinkle Twinkle Little Star'];
+  const songList = ['Alphabet', 'Head Shoulder Knees Toes', 'Jingle Bells', 'Rudolph', 'Twinkle Twinkle Little Star'];
   const svsTrackList = [
     'Supervised (5)', 'Supervised (11)', 'Supervised (22)', 'Supervised (44)',
     'Unsupervised (0)', 'Semi-Supervised (5)', 'Semi-Supervised (11)', 'Semi-Supervised (22)', 'Semi-Supervised (44)',
@@ -28,31 +29,14 @@ const Main = forwardRef((props, mainRef) => {
     '#3485fe', '#bd34fe'
   ];
   const ttsColorList = ['#fed134', '#fed134', '#fed134'];
+  const ttsDescription = 'Following samples are generated using the model trained with LJSpeech and controlled with lyrics and scores in inference time.'
   
-  const [scrollY, setScrollY] = useState(0);
+  let scrollTop = 0;
 
   const onScrollSection = useCallback(
     e => {
-      const scrollTop = e.currentTarget.scrollTop;
-      let scrollRatio = scrollY/unitHeight;
-      let currentSection = parseInt(scrollRatio);
-      if (scrollY > scrollTop && 0 < currentSection) {
-        currentSection -= 1;
-      } else if (scrollY < scrollTop) {
-        currentSection += 1;
-      }
-
-      if (scrollY%unitHeight === 0) {
-        /*
-        requestAnimationFrame(() => {
-          mainRef.current.scrollTo({
-            top: currentSection*unitHeight,
-            behavior: "smooth"
-          })
-        });
-        */
-      }
-      setScrollY(scrollTop);
+      scrollTop = e.currentTarget.scrollTop;
+      const scrollRatio = scrollTop/unitHeight;
 
       if (0 <= scrollRatio && scrollRatio < 2 - globalSize.scrollTolerance) {
         setSection("Overview");
@@ -61,7 +45,7 @@ const Main = forwardRef((props, mainRef) => {
       } else if (5 - globalSize.scrollTolerance <= scrollRatio) {
         setSection("Results");
       }
-    }, [scrollY]
+    }, [scrollTop]
   );
 
   useEffect(() => {
@@ -80,8 +64,17 @@ const Main = forwardRef((props, mainRef) => {
         <Method/>
         <Demo title={'English'} trackType={'en'} songList={songList} trackList={svsTrackList} audioList={enList} colorList={svsColorList}/>
         <Demo title={'Korean'} trackType={'kr'} songList={songList} trackList={svsTrackList} audioList={krList} colorList={svsColorList}/>
-        <Demo title={'Using TTS Data'} trackType={'tts'} songList={songList} trackList={ttsTrackList} audioList={ttsList} colorList={ttsColorList}/>
-        <Results/>
+        <Demo
+          title={'Using TTS Data'}
+          trackType={'tts'}
+          songList={songList}
+          trackList={ttsTrackList}
+          audioList={ttsList}
+          colorList={ttsColorList}
+          description={ttsDescription}
+        />
+        <Results1/>
+        <Results2/>
       </div>
     </div>
   )

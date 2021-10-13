@@ -1,21 +1,22 @@
 export const globalSize = {
   // General
-  marginLarge: '8px',
+  marginLarge: '9px',
   marginMedium: '5px',
   marginSmall: '1.5px',
+  pMarginBottom: '28px',
   
   // Font Size
-  fontSizeLarge1: '20px',
+  fontSizeLarge1: '50px',
   fontSizeMedium1: '16px',
   fontSizeSmall1: '15px',
   sectionHeadFontSize1: '36px',
   mainFontSize1: '24px',
 
-  fontSizeLarge2: '15px',
+  fontSizeLarge2: '28px',
   fontSizeMedium2: '14px',
   fontSizeSmall2: '8.5px',
-  sectionHeadFontSize2: '18px',
-  mainFontSize2: '12px',
+  sectionHeadFontSize2: '20px',
+  mainFontSize2: '15.5px',
 
   // Header
   headerHeight: '65px',
@@ -33,9 +34,10 @@ export const globalSize = {
 
   // Track
   trackHeight: '6vh',
-  nameWidth1: '180px',
+  nameWidth1: '170px',
   nameWidth2: '150px',
   buttonWidth: '36px',
+  buttonCalib: '-1px',
   trackFontWeight: 600,
-  playMarkerOpacity: '80%'
+  playMarkerOpacity: '70%'
 }

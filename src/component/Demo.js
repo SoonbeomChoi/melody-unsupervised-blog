@@ -34,7 +34,9 @@ const Demo = (props) => {
   }
 
   const onSelectSong = (event, songNumber) => {
-    if (selectedSong !== songNumber) audioControl.stop();
+    if (audioControl.playingTrack.type === props.trackType && selectedSong !== songNumber) {
+      audioControl.stop();
+    }
 
     loadSong(songNumber);
     setSelectedSong(songNumber);
@@ -60,9 +62,17 @@ const Demo = (props) => {
     );
   }
 
+  let description = [];
+  if (props.description !== undefined) {
+    description.push(
+      <p className={classes.p} key={'description'}>{props.description}</p>
+    )
+  }
+
   return (
     <div className={classes.section}>
       <h2 className={classes.h2}> {'Demo - ' + title} </h2>
+      {description}
       <ToggleButtonGroup value={props.songList[0]} exclusive onChange={onSelectSong}>
         {songList}
       </ToggleButtonGroup>

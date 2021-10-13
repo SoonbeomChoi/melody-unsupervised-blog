@@ -11,9 +11,9 @@ const Method = (props) => {
     <div className={classes.section}>
       <h2 className={classes.h2}> Method </h2>
       <p className={classes.p}>
-        The proposed model is composed of a phoneme classifier and a singing voice generator.
-        In melody-unsupervision mode the modules are trained jointly using audio and lyrics only.
-        In melody-supervision mode only the singing voice generator is trained using audio, lyrics and melody.
+        The model trains in two diffent modes. 
+        In <b>melody-unsupervision mode</b> a phoneme classifier and a singing voice generator are trained jointly using audio and lyrics only.
+        In <b>melody-supervision mode</b> only the singing voice generator is trained using audio, lyrics and melody.
       </p>
       <div className={classes.divImg}>
         <img src={ModelImage} alt="" style={{ width: 'calc(100% - ' + 2*parseInt(globalSize.marginMedium) + 'px)', margin: globalSize.marginMedium }}/>

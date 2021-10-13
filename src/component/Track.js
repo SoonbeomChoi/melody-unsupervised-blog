@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 import { withStyles } from "@mui/styles";
 import { Button } from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -38,11 +38,22 @@ const Track = forwardRef((props, canvasRef) => {
   let playButtonColor = theme.backgroundColorLevel3;
   if (isPlaying) playButtonColor = theme.highlightColor;
 
+  /*
+  let playMarkerX = 0;
+  let playMarkerW = '100%';
+  if (thumbRef.current !== undefined) {
+    playMarkerX = parseInt(playPos*thumbRef.current.clientWidth);
+    playMarkerW = (parseInt(thumbRef.current.clientWidth) - playMarkerX).toString() + 'px';
+  }
+
+  playMarkerX = playMarkerX.toString() + 'px';
+  */
+
   return (
     <div style={{ display: 'flex', width: '100%', height: globalSize.trackHeight, margin: globalSize.marginSmall + ' ' + globalSize.marginMedium }}>
       <div style={{ 
         display: 'inline-flex',
-        justifyItems: 'center',
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: theme.backgroundColorLevel1,
         width: globalSize.nameWidth1,
@@ -55,7 +66,7 @@ const Track = forwardRef((props, canvasRef) => {
         <p 
           className={classes.p}
           style={{ 
-            fontSize: globalSize.fontSizeMedium1, textAlign: 'center',
+            fontSize: globalSize.fontSizeMedium1, textAlign: 'center', margin: 0,
             [theme.breakpoints.down('sm')]: {
               fontSize: globalSize.fontSizeMedium2
             }
@@ -81,7 +92,7 @@ const Track = forwardRef((props, canvasRef) => {
           variant="contained"
           onClick={onTogglePlay}
           disableRipple={true}
-          style={{ color: playButtonColor }}
+          style={{ left: globalSize.buttonCalib, color: playButtonColor }}
         >
           <PlayArrowIcon fontSize='large'/>
         </Button>
